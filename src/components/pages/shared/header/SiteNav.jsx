@@ -4,6 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { Link } from "react-router-dom";
 import LeftSideShared from "../leftSideShared/LeftSideShared";
 
 const SiteNav = () => {
@@ -17,7 +18,10 @@ const SiteNav = () => {
         className="mb-5"
       >
         <Container>
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand>
+            {" "}
+            <Link to="/">Drogon news</Link>
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
