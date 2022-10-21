@@ -12,14 +12,14 @@ const NewsSummaryCard = ({ news }) => {
         <Card.Header className="d-flex justify-content-between align-items-center">
           <div className="d-flex align-items-center h-100">
             <img
-              class="align-self-center mr-3 rounded-circle me-3"
+              className="align-self-center mr-3 rounded-circle me-3"
               src={author?.img}
               alt="author"
-              style={{ width: "64px", height: "64px" }}
+              style={{ width: "54px", height: "54px" }}
             />
             <div className="text-start">
               <h6 className="fw-bold text-capitalize">{author?.name}</h6>
-              <p>{author?.published_date}</p>
+              <p className="fs-6 fw-light">{author?.published_date}</p>
             </div>
           </div>
 

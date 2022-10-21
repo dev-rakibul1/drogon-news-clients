@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button } from "react-bootstrap";
 import ListGroup from "react-bootstrap/ListGroup";
 import {
@@ -10,11 +10,24 @@ import {
   FaTwitter,
   FaWhatsapp,
 } from "react-icons/fa";
+import { AuthContext } from "./../../../context/usercontext/UserContext";
 
 const RightSideNav = () => {
+  const { googleSign } = useContext(AuthContext);
+  // console.log(googleSign);
+
+  const googleBtnHandler = () => {
+    googleSign()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div>
-      <Button variant="outline-primary my-1 w-100">
+      <Button variant="outline-primary my-1 w-100" onClick={googleBtnHandler}>
         {" "}
         <FaGoogle /> Login with Google
       </Button>{" "}
